@@ -1,14 +1,22 @@
-import React from 'react'
+import React from 'react';
 
-const Probintzia = () => {
+const Probintzia = ({ prob, onChange }) => {
+  const handleChange = () => {
+    onChange(prob);
+  };
+
   return (
-    <div>
-      Probintziak
-      <p>Araba<input type="radio" name="radio" id="" value="Araba" /></p>
-      <p>Bizkaia<input type="radio" name="radio" id="" value="Bizkaia" /></p>
-      <p>Gipuzkoa<input type="radio" name="radio" id="" value="Gipuzkoa" /></p>
-    </div>
-  )
-}
+    <p>
+      {prob}
+      <input
+        type="radio"
+        name="radio"
+        id=""
+        value={prob}
+        onChange={handleChange}
+      />
+    </p>
+  );
+};
 
-export default Probintzia
+export default Probintzia;
